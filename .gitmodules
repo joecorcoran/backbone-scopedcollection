@@ -4,3 +4,6 @@
 [submodule "vendor/underscore"]
 	path = vendor/underscore
 	url = git://github.com/documentcloud/underscore.git
+[submodule "spec/jasmine"]
+	path = spec/jasmine
+	url = git://github.com/pivotal/jasmine.git
