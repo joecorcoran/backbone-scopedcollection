@@ -28,4 +28,4 @@ Yeah, maybe. It's a similar approach to using `chain()` and `value()` with Under
 
 ## What is a scope?
 
-A function added to the `scopes` object literal when you extend Backbone.Collection. The function will be executed in the context of the collection (`this` inside the function refers to the collection). Return an array of models. You'll probably want to use Collection methods like `where` and `filter`.
+A function added to the `scopes` object literal when you extend Backbone.Collection. The function will be executed in the context of the collection (`this` inside the function refers to the collection). It returns an array of models. You'll probably want to use Collection methods like `where` and `filter`.
