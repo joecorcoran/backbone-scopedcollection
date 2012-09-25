@@ -11,9 +11,7 @@ describe('backbone-collection-scope', function() {
           });
         },
         viewed: function() {
-          return this.filter(function(model) {
-            return model.get('viewed') === true;
-          });
+          return this.where({ viewed: true });
         }
       }
     });
