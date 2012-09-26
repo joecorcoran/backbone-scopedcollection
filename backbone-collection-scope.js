@@ -1,8 +1,8 @@
 (function() {
 
-  var root       = this,
-      Backbone   = root.Backbone,
-      _          = root._;
+  var root     = this,
+      Backbone = root.Backbone,
+      _        = root._;
 
   var CollectionScope = Backbone.CollectionScope = function(collection) {
     var initialCollection = collection;
