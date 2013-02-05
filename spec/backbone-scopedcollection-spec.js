@@ -1,4 +1,4 @@
-describe('backbone-collection-scope', function() {
+describe('Backbone.ScopedCollection', function() {
 
   var ScopedCollection, Post, PostCollection, posts;
   beforeEach(function() {
@@ -25,7 +25,7 @@ describe('backbone-collection-scope', function() {
     ]);
   });
 
-  describe('Collection scoped method', function() {
+  describe('scoped method', function() {
     it('returns a CollectionScope object', function() {
       expect(posts.scoped()).toEqual(jasmine.any(Backbone.CollectionScope));
     });
