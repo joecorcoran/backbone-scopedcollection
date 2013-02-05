@@ -3,8 +3,9 @@
 An experiment in adding scopes to `Backbone.Collection`.
 
 ```javascript
-var ScopedCollection = Backbone.Collection.extend(Backbone.ScopedCollection),
-    posts = ScopedCollection.extend({
+var ScopedCollection = Backbone.Collection.extend(Backbone.ScopedCollection);
+
+var posts = ScopedCollection.extend({
   scopes: {
     published: function() {
       return this.where({ published: true });
@@ -12,7 +13,7 @@ var ScopedCollection = Backbone.Collection.extend(Backbone.ScopedCollection),
   }
 });
 
-posts.scoped().published().result(); // returns a collection containing only viewed posts
+posts.scoped().published().result(); // returns a collection containing only published posts
 ```
 
 ## Why?
