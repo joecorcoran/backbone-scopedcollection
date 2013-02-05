@@ -19,10 +19,10 @@
     }, this);
   };
 
-  Backbone.Collection = Backbone.Collection.extend({
+  var ScopedCollection = Backbone.ScopedCollection = {
     scoped: function() {
       return new CollectionScope(this);
     }
-  });
+  };
 
 }).call(this);

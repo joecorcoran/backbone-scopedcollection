@@ -1,9 +1,10 @@
-# Backbone.CollectionScope
+# Backbone.ScopedCollection
 
 An experiment in adding scopes to `Backbone.Collection`.
 
 ```javascript
-var posts = Backbone.Collection.extend({
+var ScopedCollection = Backbone.Collection.extend(Backbone.ScopedCollection),
+    posts = ScopedCollection.extend({
   scopes: {
     published: function() {
       return this.where({ published: true });
@@ -16,12 +17,12 @@ posts.scoped().published().result(); // returns a collection containing only vie
 
 ## Why?
 
-It makes your collection functions chainable. I like the chainable Underscore functions that are available to Backbone collections, but they are called on the array of models within a collection and not on the collection itself, so they don't play nicely with any custom collection functions you may write.
+It makes your collection functions chainable. I like the chainable Underscore functions that are available to Backbone collections, but they mostly return arrays of models, so any extra collection functions you may write can't be chained.
 
 In some cases, it would be nice to set up scopes on a collection to do something like the following:
 
 ```javascript
-posts.scoped().inCategory('personal').byAuthor('anna').published().result();
+posts.scoped().inCategory('personal').byAuthor(author).published().result();
 ```
 
 ## What is a scope?

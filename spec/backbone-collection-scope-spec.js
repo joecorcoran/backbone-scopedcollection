@@ -1,8 +1,10 @@
 describe('backbone-collection-scope', function() {
-  var Post, PostCollection, posts;
+
+  var ScopedCollection, Post, PostCollection, posts;
   beforeEach(function() {
-    Post           = Backbone.Model.extend();
-    PostCollection = Backbone.Collection.extend({
+    ScopedCollection = Backbone.Collection.extend(Backbone.ScopedCollection);
+    Post             = Backbone.Model.extend();
+    PostCollection   = ScopedCollection.extend({
       model: Post,
       scopes: {
         published: function() {
@@ -22,11 +24,13 @@ describe('backbone-collection-scope', function() {
       { title: 'quux', published: false, viewed: false }
     ]);
   });
+
   describe('Collection scoped method', function() {
     it('returns a CollectionScope object', function() {
       expect(posts.scoped()).toEqual(jasmine.any(Backbone.CollectionScope));
     });
   });
+
   describe('CollectionScope object', function() {
     it('has scope methods as object properties', function() {
       var propMethods  = _.keys(posts.scoped());
@@ -48,4 +52,5 @@ describe('backbone-collection-scope', function() {
       });
     });
   });
+
 });
